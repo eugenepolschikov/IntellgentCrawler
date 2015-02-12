@@ -13,4 +13,7 @@ public class SignInMyAccountLocators {
     //    https://www.shoebacca.com/
     public final static String headerLinksXPATH_ID2 = "//a[contains(text(),'ccount')]";
 
+//    amazon.com
+    public final static String amazonTypeAccountCSS="a[id*=\"ccount\"]";
+
 }

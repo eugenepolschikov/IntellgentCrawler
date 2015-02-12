@@ -61,8 +61,7 @@ public class CrawlerExecutor {
         crawlerLogic.navigateTargetSite(driver, "https://www.shoebacca.com/");
         crawlerLogic.refreshNewlyOpenPage(driver);
         crawlerLogic.navigateToSignInMyAccountLayout();
-
-        */
+*/
 
 
 //       ================
@@ -75,9 +74,18 @@ public class CrawlerExecutor {
 
 
 
-//        crawlerLogic.navigateTargetSite(driver, TargetResourceGenerator.getRandomResource());
+/*
+        crawlerLogic.navigateTargetSite(driver, "http://www.amazon.com/");
         crawlerLogic.refreshNewlyOpenPage(driver);
         crawlerLogic.navigateToSignInMyAccountLayout();
+*/
+        String randomTargetSite = TargetResourceGenerator.getRandomResource();
+        System.out.println("navigation is for "+randomTargetSite+"\t TARGET SITE\n");
+        crawlerLogic.navigateTargetSite(driver,randomTargetSite );
+        crawlerLogic.refreshNewlyOpenPage(driver);
+        crawlerLogic.navigateToSignInMyAccountLayout();
+      
+
     }
 
 
