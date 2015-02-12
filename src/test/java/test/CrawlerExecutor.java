@@ -1,12 +1,9 @@
 package test;
 import helpers.DriverInit;
 import helpers.TargetResourceGenerator;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 import testlogic.BaseAlgorithm;
-import testlogic.BaseTest;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -38,17 +35,31 @@ public class CrawlerExecutor {
     @BeforeMethod
     public void webAdminLoginAndEditVenueNavigate() throws IOException, InterruptedException {
 
-
-        driver.get(crawlerLogic.getEnvironmentData().getLoginbaseUrl());
-
+//        get URL from properties file
+//        driver.get(crawlerLogic.getEnvironmentData().getLoginbaseUrl());
 
     }
 
     @Test
     public void navigateToAnotherOneTargetSite(){
-        driver.get(TargetResourceGenerator.getRandomResource());
+
+//        WORKING port for online shoes ===============
+
+/*
+
+        crawlerLogic.navigateTargetSite(driver,"https://www.onlineshoes.com/");
+//        this action is done to avoid any kinda of modal popUp windows on the page.
+        crawlerLogic.refreshNewlyOpenPage(driver);
+        crawlerLogic.navigateToSignInOnlineShoes();
+*/
+
+// ============================================
+
+        crawlerLogic.navigateTargetSite(driver, TargetResourceGenerator.getRandomResource());
         crawlerLogic.refreshNewlyOpenPage(driver);
         crawlerLogic.refreshNewlyOpenPage(driver);
+
+
 
     }
 

@@ -5,6 +5,7 @@ import com.google.common.base.Function;
 import helpers.ConfigPropertiesLoader;
 import helpers.GetCurrentClassName;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,7 +16,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -121,11 +121,33 @@ public class BaseTest {
 
     }
 
-
+    public void navigateTargetSite(WebDriver driver, String source){
+        driver.get(source);
+        waitForPageLoad(driver);
+    }
 
 //    refresh page method
     public void refreshNewlyOpenPage(WebDriver driver){
         driver.navigate().refresh();
+        waitForPageLoad(driver);
+
+
     }
+
+    public void waitForPageLoad(WebDriver driver_) {
+
+        Wait<WebDriver> wait = new WebDriverWait(driver_, 30);
+        wait.until(new Function<WebDriver, Boolean>() {
+            public Boolean apply(WebDriver driver) {
+             /*   System.out.println("Current Window State       : "
+                        + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));*/
+                return String
+                        .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
+                        .equals("complete");
+            }
+        });
+    }
+
+
 
 }

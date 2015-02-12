@@ -30,13 +30,36 @@ public class BaseAlgorithm  extends  BaseTest {
 
     }
 
-
+//= ==================================
 //    INITIAL step  - navigate to sign in section
+    String signInPattern01="sign";
 
-   public void navigateToSignIn(){
+    //    onlineshoes
+   public void navigateToSignInOnlineShoes(){
        List<WebElement> headerLinksList=driver.findElements(By.cssSelector(SignInLocators.headerLinksCSS_ID1));
+       int indexToSearch=-1;
+
+       for(int i=0; i<headerLinksList.size(); i++){
+           if(headerLinksList.get(i).getText().toLowerCase().trim().contains(signInPattern01)){
+               indexToSearch =i;
+               break;
+           }
+
+       }
+
+       if(indexToSearch>=0){
+           headerLinksList.get(indexToSearch).click();
+           try {
+               Thread.sleep(1000);
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+       }
 
    }
-//    onlineshoes
+
+//    ===============================
+
+
 
 }
