@@ -121,4 +121,11 @@ public class BaseTest {
 
     }
 
+
+
+//    refresh page method
+    public void refreshNewlyOpenPage(WebDriver driver){
+        driver.navigate().refresh();
+    }
+
 }

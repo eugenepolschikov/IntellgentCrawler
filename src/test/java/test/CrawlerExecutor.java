@@ -1,5 +1,6 @@
 package test;
 import helpers.DriverInit;
+import helpers.TargetResourceGenerator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -45,9 +46,9 @@ public class CrawlerExecutor {
 
     @Test
     public void navigateToAnotherOneTargetSite(){
-        driver.get("https://www.tut.by");
-        driver.findElement(By.cssSelector("#search_from_str")).sendKeys("check check");
-        driver.findElement(By.cssSelector("#search_from_str")).sendKeys("check check");
+        driver.get(TargetResourceGenerator.getRandomResource());
+        crawlerLogic.refreshNewlyOpenPage(driver);
+        crawlerLogic.refreshNewlyOpenPage(driver);
 
     }
 

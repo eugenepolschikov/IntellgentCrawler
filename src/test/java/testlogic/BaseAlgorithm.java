@@ -1,8 +1,13 @@
 package testlogic;
 
+import com.gett.webdrivercrawler.SignInLocators;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 /**
  * Created by dell on 12.02.2015.
@@ -24,4 +29,14 @@ public class BaseAlgorithm  extends  BaseTest {
         this.driver = newDriver;
 
     }
+
+
+//    INITIAL step  - navigate to sign in section
+
+   public void navigateToSignIn(){
+       List<WebElement> headerLinksList=driver.findElements(By.cssSelector(SignInLocators.headerLinksCSS_ID1));
+
+   }
+//    onlineshoes
+
 }
