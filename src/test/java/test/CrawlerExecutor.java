@@ -46,21 +46,38 @@ public class CrawlerExecutor {
 //        WORKING port for online shoes ===============
 
 /*
-
         crawlerLogic.navigateTargetSite(driver,"https://www.onlineshoes.com/");
 //        this action is done to avoid any kinda of modal popUp windows on the page.
         crawlerLogic.refreshNewlyOpenPage(driver);
-        crawlerLogic.navigateToSignInOnlineShoes();
+        crawlerLogic.navigateToSignInMyAccountLayout();
 */
-
 // ============================================
 
-        crawlerLogic.navigateTargetSite(driver, TargetResourceGenerator.getRandomResource());
+// https://www.shoebacca.com/
+
+//        crawlerLogic.navigateTargetSite(driver, TargetResourceGenerator.getRandomResource());
+
+        /*
+        crawlerLogic.navigateTargetSite(driver, "https://www.shoebacca.com/");
         crawlerLogic.refreshNewlyOpenPage(driver);
+        crawlerLogic.navigateToSignInMyAccountLayout();
+
+        */
+
+
+//       ================
+//        http://www.barnesandnoble.com/
+        /*crawlerLogic.navigateTargetSite(driver, "http://www.barnesandnoble.com/");
         crawlerLogic.refreshNewlyOpenPage(driver);
+        crawlerLogic.navigateToSignInMyAccountLayout();*/
 
 
 
+
+
+//        crawlerLogic.navigateTargetSite(driver, TargetResourceGenerator.getRandomResource());
+        crawlerLogic.refreshNewlyOpenPage(driver);
+        crawlerLogic.navigateToSignInMyAccountLayout();
     }
 
 
